@@ -1,0 +1,110 @@
+<html>
+<head>
+    <title>
+        Fracture Analysis
+    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        p{
+            display: inline;
+        }
+        body{
+             background-image: url('/static/img.jpeg');
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             background-position: center;
+             background-size: contain, cover;
+             background-color: rgba(86, 152, 169, 0.827);
+
+        }
+        .card {
+            margin-right: auto;
+            margin-left: auto;
+            width: 250px;
+            box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+            height: 300px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0);
+            padding: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <form class='grid' action="/result" method="post">
+    <br><br>
+    <div class="container mt-5" action="/result" method="Post">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card" style="z-index: 1; left: 66px; top: -20px; position: absolute; height: 470px; width: 1000px">
+                    <div class="card-header" style='background-color: rgba(255, 255, 255, 0.2)' align="center">
+                        <h1>Hi User ! </h1>
+                        <h6>Please Enter The Details</h6>
+                    </div>
+                    <div class="card-body">
+                        <p><b> Enter The Age :</b></p>  <input type="number" name="Age" id="Age " style='background-color: rgba(255, 255, 255, 0.2)' > <br><br>                        
+                        
+                        <label for="Gender"><b> Select Gender :</b></label>
+                        <select name="Gender" id="cars" style='z-index: 1; left: 150px; top: 190px; position: absolute; height: 30px; width:190px ; background-color: rgba(255, 255, 255, 0.2)' >
+                        <option value='1'>Male</option>
+                        <option value="0">Female</option>
+                        </select>
+
+                        <label for="Prob"  style='z-index: 1; left: 500px; top: 140px; position: absolute; height: 30px; width:190px ; '><b>ASSO MEDICAL PROB:</b></label>
+                        <select name="Prob" id="cars" style='z-index: 1; left: 680px; top: 138px; position: absolute; height: 30px; width:190px ; background-color: rgba(255, 255, 255, 0.2)' >
+                        <option value='0'>No</option>
+                        <option value="1">Yes(Diabetes)</option>
+                        <option value="2">Yes(Bp)</option>
+                        <option value="3">Kidney Stone</option>
+                        <option value="4">Yes(Increase In Heart Rate)</option>
+                        <option value="5">Yes(Diabetes,Bp)</option>
+                        <option value="6">Yes(Diabetes,Blockage in Heart)</option>
+                        <option value="7">Yes(Diabetes,Kidney Stone)</option>
+                        </select><br><br>
+
+                        <label for="INJURY"><b>H/O INJURY/SURGERY :</b></label>
+                        <select name="INJURY" id="cars" style='z-index: 1; left: 220px; top: 245px; position: absolute; height: 30px; width:190px ; background-color: rgba(255, 255, 255, 0.2)' >
+                        <option value='0'>No</option>
+                        <option value="1">Vericose Vein Surgery</option>
+                        <option value="2">Uteres Removal</option>
+                        <option value="3">Kidney Stone Opreration</option>
+                        <option value="4">Uterus Surgery</option>
+                        <option value="5">Yes(Diverticulities)</option>
+                        <option value="6">Shouler Surgery</option>
+                        <option value="7">Knee Surgery</option>
+                        <option value="8">Yes(Open Heart Surgery)</option>
+                        </select>
+                        
+                        <label for="DRUG"  style='z-index: 1; left: 500px; top: 190px; position: absolute; height: 30px; width:190px ; '><b>DRUG HISTORY:</b></label>
+                        <select name="DRUG" id="cars" style='z-index: 1; left: 680px; top: 190px; position: absolute; height: 30px; width:190px ; background-color: rgba(255, 255, 255, 0.2)' >
+                        <option value='0'>No</option>
+                        <option value="1">Yes</option>
+                        <option value="2">Yes(Ecosprin)</option>
+                        </select><br><br>
+
+                        <button type="submit" style='z-index: 1; left: 455px; top: 350px; position: absolute; height: 30px; width:100px ; background-color: rgba(86, 152, 169, 0.827)'>Submit</button>
+
+                    </div>
+                    <py-script>
+                    </py-script>
+                    <div class="card-footer" style="background-color: rgba(255, 255, 255, 0.2)" align="center">
+                        <center>
+                            {% if name %}
+                             <p><B>
+                                Patient may have:</B> {{name}}
+                            </p>
+                            {% endif %}
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+  
+      
+</body>
+</html>
